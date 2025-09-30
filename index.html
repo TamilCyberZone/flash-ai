@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Tamil cyber Zone AI</title>
 <link rel="shortcut icon" href="https://i.postimg.cc/j5xFyLqG/unnamed-removebg-preview.png" type="image/x-icon">
-
+ 
 
   <style>
 * { margin:0; padding:0; box-sizing:border-box; font-family:Arial,sans-serif; }
@@ -97,7 +97,6 @@ a.link { color:#075e54; text-decoration:underline; }
 </head>
 <body>
 <div class="chat-container">
-  <div class="chat-header"><h1>AI Chatbot V4</h1></div>
   <div class="chat-header"><h1>AI Chatbot V3</h1></div>
   <div class="chat-messages" id="chat-messages">
     <div class="message bot-message">
@@ -122,52 +121,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const sourcesEl = document.getElementById("sources");
 
   const knowledgeBase = {
-    "How to make a toy car": { text:"**You can make a simple toy car at home using basic materials such as cardboard, wheels, and an axle, or create a more advanced rubber-band or motor-powered version.**
-  
-  
-  
-## Materials Needed (Basic Version)  
-- Cardboard or thick paper for the car body    
-- Four wheels (can be bottle caps, toy wheels, or small circular objects)    
-- Two axles (wooden skewers, straws with pens, or thin sticks)    
-- Glue, tape, or hot glue gun    
-- Scissors or a craft knife    
-- Optional: markers or paint for decoration  
-  
-## Step-by-Step Instructions (Manual Push Car)  
-1. **Prepare the Body:** Cut a rectangle of cardboard for the chassis (base) of your car. The size depends on your desired car dimensions.    
-2. **Attach the Axles:** Cut two small slits near the front and back edges of the cardboard. Insert the axles through these slits, making sure they can rotate freely. A straw on the body for the axles can reduce friction.    
-3. **Fix the Wheels:** Push each wheel onto the ends of the axles. If using bottle caps, poke a small hole in the center and secure them with tape or glue. Ensure wheels can rotate smoothly.    
-4. **Secure the Axles:** Glue or tape the axles lightly to the car body to prevent shifting while allowing rotation.    
-5. **Decorate:** Customize your car with markers, stickers, or paint.  
-  
-## Rubber-Band Powered Version  
-- Wrap a rubber band from the rear axle to the front of the car. Twist the rubber band and secure it so that when released, the stored energy propels the car forward. This adds a fun motion mechanism for kids.    
-  
-## Optional Motorized Version  
-- Attach a small DC motor with a battery pack to the axle using gears or a rubber band drive. Ensure proper electrical connections and safe insulation. This will allow the car to move automatically.  
-  
-## Tips for Better Performance  
-- **Lubricate axles:** Adding a little oil or wax reduces friction.    
-- **Balance the weight:** Make sure the car is evenly weighted to prevent tipping.    
-- **Smooth wheels:** Round and smooth wheels roll farther and faster.    
-- **Experiment:** Try different wheel sizes, materials, or rubber-band tensions to observe how speed and stability change.    
-  
-By following these steps, you can create a fun **toy car using household items**, and you can customize it as a simple push car, rubber-band powered, or even motorized version, making it perfect for learning and play.
-
-
-Source(s):  
-[^0^]: https://www.youtube.com/watch?v=OXbyZphLTro", link:"https://www.wikihow.com/Make-a-Toy-Car" },
-    "How to make a toy car in tamil ": { text:"ஒரு சிறிய டாய் கார் பிளாஸ்டிக் பாட்டில் அல்லது கார்ட்போர்டு உடையால் செய்யலாம்.", link:"https://www.wikihow.com/Make-a-Toy-Car" },
     "how to make a toy car": { text:"1.Prepare the Body: Clean and dry your box or carton. 2.Decorate: Cover the box with paper or paint it to look like a car. Draw on windows, headlights, and doors. 3. Attach Wheels: Simply glue your cardboard circles, bottle caps, or buttons to the side of the car body. Since the wheels are just decorations, they don't need to spin. 4. Finish: Let it dry completely and play!", link:"https://www.wikihow.com/Make-a-Toy-Car" },
-    "How to make a toy car in tamil": { text:"ஒரு சிறிய டாய் கார் பிளாஸ்டிக் பாட்டில் அல்லது கார்ட்போர்டு உடையால் செய்யலாம்.", link:"https://www.wikihow.com/Make-a-Toy-Car" },
     "javascript": { text:"JavaScript என்பது வலைப்பக்கங்களை இயங்கக்கூடியதாக 만드는 programming மொழி.", link:"https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
-    "hallo": { text:"Hello how can i help you?", link:"https://th.bing.com/th/id/OIP.F7P6Pt30bcn_bsl4AFsbTQHaFY?w=264&h=192&c=7&r=0&o=7&pid=1.7&rm=3" },
-    "hello": { text:"Hello how can i help you?", link:"https://th.bing.com/th/id/OIP.F7P6Pt30bcn_bsl4AFsbTQHaFY?w=264&h=192&c=7&r=0&o=7&pid=1.7&rm=3" },
-    "how are you":{text:"i am fine", link:"https://th.bing.com/th/id/OIP.KGq0ZyyA6MRmS5rwkDvjfAHaH_?w=154&h=180&c=7&r=0&o=7&pid=1.7&rm=3"},
-    "hi": { text:"Hi How can i help you?", link:"https://th.bing.com/th/id/OIP.LkdJbqFmUSJ19OC4_dVRNAHaGX?w=228&h=196&c=7&r=0&o=7&pid=1.7&rm=3" },
     "hallo": { text:"hallo how can i help you?", link:"https://th.bing.com/th/id/OIP.F7P6Pt30bcn_bsl4AFsbTQHaFY?w=264&h=192&c=7&r=0&o=7&pid=1.7&rm=3" },
-    "how are you":{text:"i am fine", link:"https://th.bing.com/th/id/OIP.KGq0ZyyA6MRmS5rwkDvjfAHaH_?w=154&h=180&c=7&r=0&o=7&pid=1.7&rm=3"}
+    "how are you":{text:"i am fine", link:"https://th.bing.com/th/id/OIP.KGq0ZyyA6MRmS5rwkDvjfAHaH_?w=154&h=180&c=7&r=0&o=7&pid=1.7&rm=3"},
+    "hi":{text:"hi how can i help you?", link:"https://th.bing.com/th/id/OIP.LkdJbqFmUSJ19OC4_dVRNAHaGX?w=197&h=180&c=7&r=0&o=7&pid=1.7&rm=3"}
   };
 
   const codeTemplates = {
