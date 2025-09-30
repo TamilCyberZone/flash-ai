@@ -33,23 +33,35 @@ const localAnswers = {
   "car": "Car என்பது ஒரு வாகனம் 🚗"
 };
 
-// Voice output
+// ✅ Voices load fix
+let voices = [];
+window.speechSynthesis.onvoiceschanged = () => {
+  voices = window.speechSynthesis.getVoices();
+};
+
+// ✅ Voice output
 function speak(text){
   if('speechSynthesis' in window){
     const utter = new SpeechSynthesisUtterance(text.replace(/<br>/g,' '));
-    const voices = window.speechSynthesis.getVoices();
-    const tamilVoice = voices.find(v=>v.lang.startsWith('ta')) || voices[0];
+    const tamilVoice = voices.find(v=>v.lang.startsWith('ta')) || voices.find(v=>v.lang.startsWith('en')) || voices[0];
     if(tamilVoice) utter.voice = tamilVoice;
     window.speechSynthesis.speak(utter);
   }
 }
 
-// Email send (via Netlify form)
+// ✅ Silent Email send (via Netlify form)
 function sendToEmail(userInput){
-  document.getElementById("hiddenQuestion").value = userInput;
-  document.forms["user-questions"].submit();
+  const formData = new FormData();
+  formData.append("form-name", "user-questions");
+  formData.append("question", userInput);
+
+  fetch("/", {
+    method: "POST",
+    body: formData
+  }).catch((error) => console.error("Form submit error:", error));
 }
 
+// ✅ Main chatbot
 async function ask(){
   const q = document.getElementById("q").value.trim();
   if(!q) return;
@@ -60,7 +72,7 @@ async function ask(){
   let sources = [];
   let moreLinks = [];
 
-  // 1️⃣ Local variable
+  // 1️⃣ Local variable check
   if(localAnswers[q]){
     finalAnswer = localAnswers[q];
     sources.push("Local Variable");
@@ -68,7 +80,7 @@ async function ask(){
     speak(finalAnswer);
     return;
   } else {
-    // If not in local vars → send to email
+    // Not found in local → send to Netlify form (silent)
     sendToEmail(q);
   }
 
@@ -122,6 +134,7 @@ async function ask(){
   }
 }
 
+// ✅ Chat UI
 function addMsg(type, text){
   let div = document.createElement("div");
   div.className = "msg " + type;
